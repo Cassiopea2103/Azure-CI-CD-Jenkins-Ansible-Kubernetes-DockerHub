@@ -1,14 +1,14 @@
 # Deploying to K8s using Jenkins and Ansible
 
 <div style="display:flex;flex-direction:column">
-    <div style="flex:1">
-        <img src="https://github.com/user-attachments/assets/c150db1c-39bf-4694-8104-a620bfa72611" style="border-radius:5px"/>
+    <div style="display:flex; gap:2; height:100%; width:100%;">
+        <img src="https://github.com/user-attachments/assets/c150db1c-39bf-4694-8104-a620bfa72611" style="border-radius:5px" width="500px" height="150px" />
+        <img src = "https://github.com/user-attachments/assets/c03691f2-f9c1-45b7-8a48-62ace257bee2" style="border-radius:5px" width="500px" height="150px" />
     </div>
     <div>
-        <img src = "https://github.com/user-attachments/assets/c03691f2-f9c1-45b7-8a48-62ace257bee2" width="25%" height="150"/>
-        <img src = "https://github.com/user-attachments/assets/192c02bd-6845-443b-99db-3376145dcee7" width="30%" height="150"/>
-        <img src = "https://github.com/user-attachments/assets/9a8ffd11-11ba-4b86-8ea3-1568c986733c" width="26%" height="150"/>
-        <img src = "https://github.com/user-attachments/assets/db93abe9-69b1-4edb-b809-4d0f2202ad13" width="14%" height="150"/>
+        <img src = "https://github.com/user-attachments/assets/192c02bd-6845-443b-99db-3376145dcee7" style="border-radius:5px" width="333px" height="150px" />
+        <img src = "https://github.com/user-attachments/assets/9a8ffd11-11ba-4b86-8ea3-1568c986733c" style="border-radius:5px" width="333px" height="150px" />
+        <img src = "https://github.com/user-attachments/assets/db93abe9-69b1-4edb-b809-4d0f2202ad13" style="border-radius:5px" width="330px" height="150px" />
     </div>
 </div>
 
@@ -26,7 +26,7 @@ Here is a breakdown of the different steps on how the flow goes :
 5. The the Ansible server uses another K8s server to create deployments of the published docker images and runs it in pods in a K8s Azure cluster . 
   
 Below is the schema explaining these steps :  
-<img src='https://github.com/user-attachments/assets/2b063c91-2f4a-48ad-94ea-796e0c0e3bcf' style='border-radius:5px' />
+<img src='https://github.com/user-attachments/assets/2b063c91-2f4a-48ad-94ea-796e0c0e3bcf' style='border-radius:5px' width="1000px" />
 
 ---
 
@@ -46,19 +46,19 @@ In this section , we will see :
 _Prerequisites : You have to create before any of this a Microsoft Azure account and setup up a subscription in order to use its different services_
 
 1. Open the Azure portal and create an overall resource group to contain all of our Azure resources for future use ( VMs and clusters of Kubernetes ) 
-<img width="932" alt="1 ressource_group" src="https://github.com/user-attachments/assets/4089f613-da15-484b-a475-55c879eaba6f">
+<img  alt="1 ressource_group" src="https://github.com/user-attachments/assets/4089f613-da15-484b-a475-55c879eaba6f"  style='border-radius:5px' width="1000px">
 
 2.Chose a name for your resource group as well as a subscription plan an click create next 
-<img width="789" alt="2 resource_group_created" src="https://github.com/user-attachments/assets/f693db36-b426-49ea-a842-05e7f0d1025c">
+<img  alt="2 resource_group_created" src="https://github.com/user-attachments/assets/f693db36-b426-49ea-a842-05e7f0d1025c"  style='border-radius:5px' width="1000px">
 ## II. Creating and setting up a Jenkins VM
 1. The Azure portal dashboard should look like this:
-<img width="838" alt="3 azure_dashboard" src="https://github.com/user-attachments/assets/303708a8-0afb-4f55-8599-9861002dde19">
+<img  alt="3 azure_dashboard" src="https://github.com/user-attachments/assets/303708a8-0afb-4f55-8599-9861002dde19"  style='border-radius:5px' width="1000px">
 
 2. Next affect it to the resource group you just created above and give it a name like jenkins-server.  
 Select the appropriate options like the region, the size, the OS and create the VM.  
 <b>IMPORTANT : chose to create the VM with a new secret key file and save it securely somewhere on your computer . <i>It will be used for future connexion to the jenkins VM server.</i></b>
 3. After completion of creation , the VM pannel is like : 
-<img width="949" alt="4 vm_jenkins_server_dashboard" src="https://github.com/user-attachments/assets/20f54dd6-a713-4934-b0ea-93cd0c084bc8">
+<img width="1000" alt="4 vm_jenkins_server_dashboard" src="https://github.com/user-attachments/assets/20f54dd6-a713-4934-b0ea-93cd0c084bc8">
 
   
 ## III. Connecting to Jenkins server from local computer with MobaXterm on SSH 
@@ -68,18 +68,18 @@ _To connect the the jenkins server from our local computer and configure it , we
 https://mobaxterm.mobatek.net
 
 1. On the top menu interface of MobaXterm , choose the option SSH and fill the connection settings 
-<img width="635" alt="5 session_settings" src="https://github.com/user-attachments/assets/7afd2545-bfd4-4631-9c82-631c2b073d91">
+<img width="1000" alt="5 session_settings" src="https://github.com/user-attachments/assets/7afd2545-bfd4-4631-9c82-631c2b073d91">
 
 * Remote host is the public IP of the jenkins server you created . Copy its address from the Azure portal and paste it there.
 * Username by default is set to _azureuser_ for Ubuntu LTS 22.04 version OS VM . 
 * You need to use the secret key you downloaded to connect to your VM instance . For that :
   * click on "Advanced SSH settings" 
-<img width="636" alt="6 xterm_interface" src="https://github.com/user-attachments/assets/d7f429b8-0419-421e-9543-a500c4e17512">
+<img width="1000" alt="6 xterm_interface" src="https://github.com/user-attachments/assets/d7f429b8-0419-421e-9543-a500c4e17512">
 
   * navigate to where you downloaded the secret key file and select it .
   
 * Once all of the above steps completed , you can click on the OK button to connect to your jenkins server . The session SSH interface will look like :
-<img width="676" alt="7 session_start_jenkins_server" src="https://github.com/user-attachments/assets/cf8727db-a6bc-42fb-a2af-786b7181ae45">
+<img width="1000" alt="7 session_start_jenkins_server" src="https://github.com/user-attachments/assets/cf8727db-a6bc-42fb-a2af-786b7181ae45">
 
 
 ## IV. Installing JAVA JDK
@@ -112,8 +112,8 @@ _Jenkins needs a JDK to run properly_
    ```bash
    source /etc/environment
    ```
-7. Check the JAVA_HOME is loaded porperly : 
-    <img width="298" alt="8 3 checking_java_env" src="https://github.com/user-attachments/assets/5e64f60f-f239-41cf-842b-477c55336307">
+7. Check the JAVA_HOME is loaded porperly :   
+    <img width="700" height="100" alt="8 3 checking_java_env" src="https://github.com/user-attachments/assets/5e64f60f-f239-41cf-842b-477c55336307">
 
 
 ## V. Installing Jenkins
@@ -155,14 +155,14 @@ To access Jenkins , copy the public IP address of the Jenkins server on Azure an
 
 
 Once done , Jenkins will ask you for the default admin user created password : 
-<img width="736" alt="11 jenkins_interface_init" src="https://github.com/user-attachments/assets/f6f15f55-879c-4eb1-9eea-2e24b29ad825">
+<img width="1000" alt="11 jenkins_interface_init" src="https://github.com/user-attachments/assets/f6f15f55-879c-4eb1-9eea-2e24b29ad825">
 
 _Notice the ```var/lib/secrets/initialAdminPassword``` path_
 
 Open the file ```initialAdminPassword``` , copy it , paste it and click on "Continue".
 
 Once connected , the Jenkins interface will be presented like : 
-<img width="947" alt="12 jenkins_dashboard" src="https://github.com/user-attachments/assets/f7c2af5f-4542-48f5-acf0-5fe09b4801d2">
+<img width="1000" alt="12 jenkins_dashboard" src="https://github.com/user-attachments/assets/f7c2af5f-4542-48f5-acf0-5fe09b4801d2">
 
 
 ## VIII. Configuring and installing Ansible
@@ -170,7 +170,7 @@ Once connected , the Jenkins interface will be presented like :
 1. Create an Azure VM .  
 Give it a name like Ansible server , affect it to the resource group created chose a size for it...
 2. After creation , we have : 
-<img width="933" alt="13 azure_dashboard" src="https://github.com/user-attachments/assets/3097f4ce-57b6-42f1-9e66-42217bf7188a">
+<img width="1000" alt="13 azure_dashboard" src="https://github.com/user-attachments/assets/3097f4ce-57b6-42f1-9e66-42217bf7188a">
 
 3. On the VM network configuration interface , add PORT inbound rules for PORT ranges 8080-8090 
 4. add new user to the system for ansible :
@@ -222,7 +222,7 @@ Give it a name like Ansible server , affect it to the resource group created cho
 <img width="926" alt="15 ansible_integration_w_jenkins" src="https://github.com/user-attachments/assets/faa2674e-6ec0-4dee-868f-ac56b1d58aee">
 
 3. Next on Jenkins administration dahsboard go to `system configuration` and at the very bottom , you will see the newly `publish over SSH` configuration section
-4. Configure there the remote connection to the Ansible server 
+4. Configure there the remote connection to the Ansible server   
 <img width="835" alt="16 ansible_integration_on_jenkins_publish_over_ssh" src="https://github.com/user-attachments/assets/ce960151-19b7-446b-8892-0340cd379494">
 
 For the setting fileds : 
@@ -231,7 +231,7 @@ For the setting fileds :
     * For the username , give the newly created user username on the Ansible server
     * Check password authentication and give the password you configured the ansibleadmin user with.
   
-5. Testing connection to Ansible VM from Jenkins server : 
+5. Testing connection to Ansible VM from Jenkins server :     
 <img width="803" alt="17 test_connexion_ansible_server_from_jenkins" src="https://github.com/user-attachments/assets/a0cf5816-0120-4f93-b9f7-5e634c6d98d5">
 
 
@@ -278,7 +278,7 @@ Grant ansibleadmin user exlusive administration on the docker folder
     ```bash
     sudo apt install net-tools
     ```
-    <small>_Next we use the `ifconfig` command to retrieve the IP_</small>
+    <small>_Next we use the `ifconfig` command to retrieve the IP_</small>   
     <img width="463" alt="19 0 ansible_vm_ip_address" src="https://github.com/user-attachments/assets/8f918010-11dd-4288-9d52-231202fba3f4">
 
 
@@ -341,24 +341,24 @@ Grant ansibleadmin user exlusive administration on the docker folder
 6. Next we check the ansible playbook to see if there are no errors 
     ```ansible
     ansible-playbook cafe-app.yml --check
-    ```
+    ```   
     <img width="773" alt="19 1 ansible-playbook_check" src="https://github.com/user-attachments/assets/62a7c8e3-78c7-4aa3-804c-84f73c618aaf">
 
 7. If all is good, we run next the playbook 
     ```ansible
     ansible-playbook cafe-app.yml
-    ```
+    ```   
     <img width="770" alt="19 2 ansible_playbook_run" src="https://github.com/user-attachments/assets/14b1a3cc-057b-4748-bb30-11467907743e">
 
 8. Check if Docker image was created 
     ```bash
     docker images
-    ```
+    ```  
 
     <img width="409" alt="19 3 repo_cloned_docker_image_created" src="https://github.com/user-attachments/assets/11a1eb07-e765-43c0-85c6-1fc0281d5bdd">
 
 
-9.  Check if Docker image was published on Docker Hub 
+9.  Check if Docker image was published on Docker Hub    
     <img width="935" alt="19 4 docker_hub_cafe_app_image" src="https://github.com/user-attachments/assets/2a28e355-f0fc-4e35-8aae-2a4f097d764b">
 
 
@@ -370,16 +370,16 @@ Grant ansibleadmin user exlusive administration on the docker folder
    *   select the branch where the code is hosted 
 3. On the section `post build actions` , select send built artifacts over SSH 
     * Select the ansible-server configured before 
-    * for exec command box , fill `ansible-playbook /opt/docker/cafe-appp.yml` and save      
+    * for exec command box , fill `ansible-playbook /opt/docker/cafe-appp.yml` and save         
   
-<img width="841" alt="20 1 jenkins_job_config" src="https://github.com/user-attachments/assets/3edd89ed-299c-4583-9249-fd840bb4cf8a">
+<img width="841" alt="20 1 jenkins_job_config" src="https://github.com/user-attachments/assets/3edd89ed-299c-4583-9249-fd840bb4cf8a">   
 
-<img width="805" alt="20 2 jenkins_job_config2" src="https://github.com/user-attachments/assets/323d2e60-91d3-4b5d-bcde-ad2b6a8540c6">
+<img width="805" alt="20 2 jenkins_job_config2" src="https://github.com/user-attachments/assets/323d2e60-91d3-4b5d-bcde-ad2b6a8540c6">   
 
-1. Click on `Build now` on Jenkins interface to launch the job and trigger ansible playbook for creating the docker image , pushing it to dockerhub.
+1. Click on `Build now` on Jenkins interface to launch the job and trigger ansible playbook for creating the docker image , pushing it to dockerhub.   
     <img width="736" alt="20 jenkins_job_success" src="https://github.com/user-attachments/assets/d8a3d8c2-9e95-4f4e-8fdd-f9aad896a665">
 
-2. Back to the Ansible server , check for docker images 
+2. Back to the Ansible server , check for docker images    
     <img width="419" alt="21 jenkins_trigger_ansible_playbook_build_docker_images" src="https://github.com/user-attachments/assets/56d548d4-f606-42d4-b9bc-f226a148b5dd">
 
 
@@ -396,7 +396,7 @@ curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
 6. Check the AZ CLI installation : 
     ```bash
     az --version
-    ```
+    ```   
     <img width="403" alt="22 azure_cli_installation_check" src="https://github.com/user-attachments/assets/a9ac78ed-bf0d-4b32-86a6-84693fb52fa1">
 
 7. Connect to Azure portal from Azure CLI on K8s server        
@@ -408,13 +408,13 @@ curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
     az aks install-cli
     ```
 9. Once K8s CLI installed , we can connect to Azure K8s cluster .   
-On the K8s cluster , select the `Connect` option 
+On the K8s cluster , select the `Connect` option    
     <img width="947" alt="23 k8s_cluster_dashboard" src="https://github.com/user-attachments/assets/f46a4af3-8f96-456f-b40e-d263d7f99d26">
 
-10. A connexion pannel will open , copy the credentials and paste them on the terminal of the K8s server 
+10. A connexion pannel will open , copy the credentials and paste them on the terminal of the K8s server    
     <img width="760" alt="24 connexion_to_k8s_cluster_from_azcli" src="https://github.com/user-attachments/assets/40ff1f3f-6894-42a0-826a-050a8d4f15ab">
 
-11. Check connection to K8s cluster by using `kubectl` command 
+11. Check connection to K8s cluster by using `kubectl` command    
     <img width="455" alt="25 k8s_cluster_connexion_check" src="https://github.com/user-attachments/assets/381f0e4b-7e2a-49da-b036-0b9d64c0ab9d">
 
 12. On K8s server , navigate to root and create the deployment file 
@@ -506,7 +506,7 @@ The content should be as follow  ( file in source code of project as cafe-app-de
     cd /etc/ssh
     sudo nano sshd_config
     ```
-    Modify the file to include the below lines : 
+    Modify the file to include the below lines :    
     <img width="494" alt="26 k8s_server_password_auth_config" src="https://github.com/user-attachments/assets/263e6074-37a5-4268-9afe-1d99016a7d59">
 
 
@@ -519,7 +519,7 @@ The content should be as follow  ( file in source code of project as cafe-app-de
     ssh-copy-id root@xx.x.x.x ( xx.x.x.x is the IP of K8S server )
     ```
     This is principally to enable a self-trust ( or loopback ) , meaning the K8s server will add the Ansible VM to its trusted hosts , so it won't be prompted any password when trying to automate tasks on it . 
-7. Next we SSH to the K8s server from the Ansible server to check
+7. Next we SSH to the K8s server from the Ansible server to check      
     <img width="441" alt="27 ssh_to_k8s_server_from_ansible_server" src="https://github.com/user-attachments/assets/95b7a163-fff4-4cae-ac83-9ab6d63f33ff">
 
     As we can see , no password was prompted to the ansibleadmin when connecting to K8s server
@@ -562,15 +562,15 @@ The content should be as follow  ( file in source code of project as cafe-app-de
     ansible-playbook k8s-deployment-playbook.yml 
     ```
 
-10. Before applying the playbook : 
+10. Before applying the playbook :   
     <img width="464" alt="28 k8s_resources_check0" src="https://github.com/user-attachments/assets/b9795ae5-64d4-41a1-aca7-ab76a54e568c">
 
-11. After playbook run and applying deployments : 
+11. After playbook run and applying deployments :   
     <img width="584" alt="28 k8s_resources_check1" src="https://github.com/user-attachments/assets/22d3c9c4-2e19-4217-8f20-8ba3635766ab">
 
 
 ## XV. Preview of the application 
-We copy the external IP address of the service and paste it on a web browser 
+We copy the external IP address of the service and paste it on a web browser   
 <img width="927" alt="29 application_deployed_preview" src="https://github.com/user-attachments/assets/b1a62637-19e9-45f2-9932-1ba115575229">
 
 
@@ -579,14 +579,14 @@ We copy the external IP address of the service and paste it on a web browser
 
 1. Create a jenkins job and name it something like app_job_CD 
 2. Go to `post build actions` and select `publish built artifacts over SSH`. 
-3. Select the Ansible server and for the exec command , fill in the command to launch the k8s deployment playbook   
-   
+3. Select the Ansible server and for the exec command , fill in the command to launch the k8s deployment playbook     
+      
 <img width="960" alt="30 0 jenkins_job_config" src="https://github.com/user-attachments/assets/23c3b337-23b6-4702-9284-d135fbafee77">
 
 
 <b>The CD job needs to take effect after the CI job is done.</b>
 
-For that, in post build actions , add another action `build project ( builds after )` and select the CD job
+For that, in post build actions , add another action `build project ( builds after )` and select the CD job   
 <img width="722" alt="30 1 integrate_cd_job_to_take_place_after_ci" src="https://github.com/user-attachments/assets/3cd380b6-919a-4067-a989-65c763d3ec9c">
 
 
