@@ -1,16 +1,5 @@
 # Deploying to K8s using Jenkins and Ansible
 
-<div style="display:flex;flex-direction:column">
-    <div style="display:flex; gap:2; height:100%; width:100%;">
-        <img src="https://github.com/user-attachments/assets/c150db1c-39bf-4694-8104-a620bfa72611" style="border-radius:5px" width="500px" height="150px" />
-        <img src = "https://github.com/user-attachments/assets/c03691f2-f9c1-45b7-8a48-62ace257bee2" style="border-radius:5px" width="500px" height="150px" />
-    </div>
-    <div>
-        <img src = "https://github.com/user-attachments/assets/192c02bd-6845-443b-99db-3376145dcee7" style="border-radius:5px" width="333px" height="150px" />
-        <img src = "https://github.com/user-attachments/assets/9a8ffd11-11ba-4b86-8ea3-1568c986733c" style="border-radius:5px" width="333px" height="150px" />
-        <img src = "https://github.com/user-attachments/assets/db93abe9-69b1-4edb-b809-4d0f2202ad13" style="border-radius:5px" width="330px" height="150px" />
-    </div>
-</div>
 
 ---
 
