@@ -25,8 +25,9 @@ Here is a breakdown of the different steps on how the flow goes :
 4. The same CI pipeline then publishes the built Docker image to Docker Hub for later use in this project.
 5. The the Ansible server uses another K8s server to create deployments of the published docker images and runs it in pods in a K8s Azure cluster . 
   
-Below is the schema explaining these steps :  
-<img src='https://github.com/user-attachments/assets/2b063c91-2f4a-48ad-94ea-796e0c0e3bcf' style='border-radius:5px' width="1000px" />
+Below is the system architecture :  
+![azure_ci_cd drawio (1)](https://github.com/user-attachments/assets/9a426357-8b52-4a27-9f2a-bb33ff583045)
+
 
 ---
 
